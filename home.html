@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teste de tela</title>
+	<style>
+
+
+	body{
+		background-color: #373f42;
+	}
+	.logo{
+		height: 140px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 30px;
+
+	}
+
+	.container{
+		height: 270px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.container_int{
+		height: 270px;
+		width: 330px;
+		background-color: #f7f7f7;
+		border-radius: 10px;
+	}
+
+	
+	label,input{
+		display: block;
+	}
+
+	#email,#senha{
+		margin-top: 25px;
+		margin-left: 25px;
+	}
+
+	label{
+		font-size: 15px;
+	}
+
+	h5{
+		margin-left: 25px;
+		margin-top: 9px;
+		color: #66aac2;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	h5:hover{
+		color: black;
+	}
+
+
+	
+
+	
+
+
+	
+	
+		
+	</style>
+	
+
+</head>
+<body>
+
+	<div class="logo">
+		<img src="logo.jpg" width="80">
+	</div>
+
+	<div class="container">
+		<div class="container_int">
+			<form name="form" id="form">
+				<label id="email"><b>E-email:</b></label>
+				<input type="text" name="email" value="" required>
+				<label id="senha"><b>Senha:</b></label>
+				<input type="password" name="senha" value="" required>
+
+				<input type="submit" name="submit" onclick="enviar()">
+
+				<h5>Esqueci a senha</h5>
+				
+
+			</form>
+		</div>
+	</div>
+
+
+	<script>
+
+		var txt = document.getElementById("form")
+		var txt2 = txt.elements
+
+		txt2[0].style.marginLeft="25px";
+		txt2[0].style.height="35px";
+		txt2[0].style.width="270px";
+		txt2[0].style.borderRadius="5px";
+		txt2[0].style.border="1px solid #ccc";
+		txt2[1].style.marginLeft="25px";
+		txt2[1].style.height="35px";
+		txt2[1].style.width="270px";
+		txt2[1].style.borderRadius="5px";
+		txt2[1].style.border="1px solid #ccc";
+		txt2[2].style.marginLeft="25px";
+		txt2[2].style.marginTop="20px";
+		txt2[2].style.height="40px";
+		txt2[2].style.width="95px";
+		txt2[2].style.borderRadius="5px";
+		txt2[2].style.boxShadow="1px 1px 1px 1px #ccc";
+
+		
+		function enviar(form){
+			
+			var log = document.getElementById("form").elements[0].value;
+			var pass = document.getElementById("form").elements[1].value;
+			var quebra = "\n"
+			var dt = new Date ();
+
+				var sem = dt.getDay();
+				var dia = dt.getDate();
+				var mes = dt.getMonth();
+				var ano = dt.getFullYear();
+				var hora = dt.getHours();
+				var min = dt.getMinutes();
+				var seg = dt.getSeconds();
+
+				var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+				var semana = ["Domingo" ,"Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado"]
+
+			if((log != " ")&&( pass != " ")){
+				alert("Cadastro com Sucesso"+quebra+log+quebra+pass+quebra+semana[sem]+" "+dia+" "+meses[mes]+" "+ano+quebra+hora+" Horas"+" "+min+" Min" +" "+seg+" Segundos");
+				
+			}else{
+				
+				alert("Error")
+			}
+		}	
+
+					
+
+		function reset(){
+			var log = document.getElementById("email").value = " ";
+			var pass = document.getElementById("senha").value= " ";
+		}
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>
